@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@dcloudio/uni-app':
     specifier: 3.0.0-alpha-3080120230428001
@@ -44,6 +40,9 @@ dependencies:
   '@dcloudio/uni-quickapp-webview':
     specifier: 3.0.0-alpha-3080120230428001
     version: 3.0.0-alpha-3080120230428001(postcss@8.4.23)(vue@3.2.45)
+  '@dcloudio/uni-ui':
+    specifier: ^1.4.28
+    version: 1.4.28
   pinia:
     specifier: ^2.0.27
     version: 2.0.35(typescript@4.9.3)(vue@3.2.45)
@@ -58,9 +57,6 @@ dependencies:
     version: 9.2.2(vue@3.2.45)
 
 devDependencies:
-  '@dcloudio/types':
-    specifier: ^3.3.2
-    version: 3.3.2
   '@dcloudio/uni-automator':
     specifier: 3.0.0-alpha-3080120230428001
     version: 3.0.0-alpha-3080120230428001(jest-environment-node@27.5.1)(jest@27.0.4)(postcss@8.4.23)(vue@3.2.45)
@@ -1324,6 +1320,7 @@ packages:
 
   /@dcloudio/types@3.3.2:
     resolution: {integrity: sha512-O+7M55RXqYJMCTh3MC86IGJvDPTR+v214yUeaoz1YUIHa2gJdgObs4RRwfAwZoLMtdoZ9J5BElZZqRy5oi+UTg==}
+    dev: false
 
   /@dcloudio/types@3.3.3:
     resolution: {integrity: sha512-xfp88QOJ2fgCzv49HhEGrX0L+3xDsCyyvcoApL7z0J1Lr7tqPUkxqAVBe9zBlKsDX/mO9mNj7NzKIisHfp+fNQ==}
@@ -1788,6 +1785,10 @@ packages:
       - supports-color
       - ts-node
       - vue
+    dev: false
+
+  /@dcloudio/uni-ui@1.4.28:
+    resolution: {integrity: sha512-e/lSbvR79KH9+d3D4ueNbvD6szigjO/5IyjBNmiTqaj0PTS324fBV3L6f3s1qpkYonM4rdOl000hVOcAg6Gh/A==}
     dev: false
 
   /@dcloudio/vite-plugin-uni@3.0.0-alpha-3080120230428001(postcss@8.4.23)(vite@4.0.3)(vue@3.2.45):
@@ -7578,3 +7579,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
