@@ -8,7 +8,6 @@ const activeIndex = ref(0)
 const onchange: UniHelper.SwiperOnChange = (ev) => {
   // ! 表示断言，告诉编译器，这个值一定不为空
   activeIndex.value = ev.detail!.current
-  console.log(activeIndex.value, 'activeIndex.value')
 }
 
 // 定义 props 接收
