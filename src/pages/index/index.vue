@@ -5,6 +5,7 @@ import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import type { BannerItem, CategoryItem } from '@/types/home'
 import CategoryPanel from '@/pages/index/componets/CategoryPanel.vue'
+import HotPanel from '@/pages/index/componets/HotPanel.vue'
 
 const bannerList = ref<BannerItem[]>([])
 
@@ -36,6 +37,9 @@ onLoad(() => {
 
   <!-- 分类面板 -->
   <CategoryPanel :list="CategoryList" />
+
+  <!-- 热门推荐 -->
+  <HotPanel />
 
   <view class="index">index</view>
 </template>
