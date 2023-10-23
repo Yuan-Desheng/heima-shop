@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import CustomNavbar from '@/pages/index/componets/CustomNavbar.vue'
-import { getHomeBannerAPI, getHomeCategoryAPI } from '@/services/home'
+import { getHomeBannerAPI, getHomeCategoryAPI, getHomeHoteAPI } from '@/services/home'
 import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
-import type { BannerItem, CategoryItem } from '@/types/home'
+import type { BannerItem, CategoryItem, HotItem } from '@/types/home'
 import CategoryPanel from '@/pages/index/componets/CategoryPanel.vue'
 import HotPanel from '@/pages/index/componets/HotPanel.vue'
 
@@ -22,9 +22,17 @@ const getHomeCategoryData = async () => {
   CategoryList.value = res.result
 }
 
+// 获取热门推荐数据
+const hotList = ref<HotItem[]>([])
+const getHomeHotData = async () => {
+  const res = await getHomeHoteAPI()
+  hotList.value = res.result
+}
+
 onLoad(() => {
   getHomeBannerData()
   getHomeCategoryData()
+  getHomeHotData()
 })
 </script>
 
@@ -39,7 +47,7 @@ onLoad(() => {
   <CategoryPanel :list="CategoryList" />
 
   <!-- 热门推荐 -->
-  <HotPanel />
+  <HotPanel :list="hotList" />
 
   <view class="index">index</view>
 </template>
