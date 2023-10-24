@@ -29,7 +29,7 @@ export const getHomeCategoryAPI = () => {
 /**
  * 首页-热门推荐-小程序
  */
-export const getHomeHoteAPI = () => {
+export const getHomeHotAPI = () => {
   return http<HotItem[]>({
     method: 'GET',
     url: '/home/hot/mutli',
