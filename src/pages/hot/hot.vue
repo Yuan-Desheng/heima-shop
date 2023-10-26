@@ -1,6 +1,9 @@
 // /src/pages/hot/hot.vue
 <script setup lang="ts">
 // 热门推荐页 标题和url
+import {getHotRecommendAPI} from "@/services/hot";
+import {onLoad} from "@dcloudio/uni-app";
+
 const hotMap = [
   {type: '1', title: '特惠推荐', url: '/hot/preference'},
   {type: '2', title: '爆款推荐', url: '/hot/inVogue'},
@@ -15,7 +18,16 @@ const query = defineProps<{
 // 获取当前url
 const currUrlMap = hotMap.find(item => item.type === query.type);
 // 动态设置标题
-uni.setNavigationBarTitle({title: currUrlMap!.title})
+uni.setNavigationBarTitle({title: currUrlMap!.title});
+// 获取热门推荐数据
+const getHotRecommendData = async () => {
+  const res = await getHotRecommendAPI(currUrlMap!.url);
+  console.log(res);
+}
+
+onLoad(() => {
+  getHotRecommendData();
+});
 
 </script>
 
